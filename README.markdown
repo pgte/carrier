@@ -1,4 +1,4 @@
-Carrier allows you to implement new-line terminated protocols over node.js.
+Carrier helps you implement new-line terminated protocols over node.js.
 
 The client can send you chunks of lines and carrier will only notify you on each completed line.
 
