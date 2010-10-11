@@ -25,8 +25,8 @@ Or, you can also listen to the "line" event on the returned object of carrier.ca
         carrier = require('carrier');
 
     var server = net.createServer(function(conn) {
-      var carrier = carrier.carry(conn);
-      carrier.on('line',  function(line) {
+      var my_carrier = carrier.carry(conn);
+      my_carrier.on('line',  function(line) {
         console.log('got one line: ' + line);
       });
     });
