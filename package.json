@@ -1,6 +1,6 @@
 { "name" : "carrier"
 , "description" : "Evented stream line reader for node.js"
-, "version" : "0.0.3"
+, "version" : "0.0.4"
 , "homepage" : "http://github.com/pgte/carrier"
 , "author" : "Pedro Teixeira <pedro.teixeira@gmail.com> (http://www.metaduck.com)"
 , "contributors" :
