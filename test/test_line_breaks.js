@@ -1,34 +1,42 @@
 var net     = require('net'),
-    assert  = require('assert'),
+    tap     = require('tap'),
     carrier = require('../lib/carrier.js');
 
-var server;
-var port = 4001;
-var to_be_sents = ["Hel", "lo\n", "Wor", "ld\n", "Glorious", " place"]
-var expecteds = to_be_sents.join('').split("\n");
+tap.test("multiple lines", function(t) {
+  var server;
+  var port = 4001;
+  var to_be_sents = ["Hel", "lo\n", "Wor", "ld\n", "Glorious", " place"];
+  var expecteds = to_be_sents.join('').split("\n");
 
-exports.run = function(next) {
+  t.plan(expecteds.length);
 
   server = net.createServer(function(conn) {
     var received_lines = -1;
     carrier.carry(conn, function(line) {
       received_lines ++;
-      assert.equal(line, expecteds[received_lines]);
-      if (received_lines == expecteds.length - 1) next();
+      t.equal(line, expecteds[received_lines]);
     });
   });
-  server.listen(port);;
+  server.listen(port);
 
   var client = net.createConnection(port);
   client.on('connect', function() {
-    to_be_sents.forEach(function(to_be_sent) {
-      client.write(to_be_sent);
-      client.flush();
-    })
-    client.end();
+    var sent_lines = 0;
+    var next = function() {
+      if (sent_lines !== to_be_sents.length) {
+        client.write(to_be_sents[sent_lines], function() {
+          sent_lines ++;
+          next();
+        });
+      }
+      else {
+        client.end();
+      }
+    };
+    next();
   });
-}
 
-exports.teardown = function() {
-  server.close();
-}
+  t.on("end", function() {
+    server.close();
+  });
+});

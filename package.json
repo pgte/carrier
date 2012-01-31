@@ -16,7 +16,8 @@
   }
 , "directories" : { "lib" : "./lib" }
 , "engines" : { "node" : ">=0.3.0" }
-, "scripts" : {}
+, "devDependencies": { "tap" : "0.2" }
+, "scripts" : { "test" : "tap test/*.js" }
 , "main": "./lib/carrier.js"
 , "licenses" :
   [ { "type" : "MIT"
