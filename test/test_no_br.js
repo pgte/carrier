@@ -1,17 +1,17 @@
 var net     = require('net'),
-    assert  = require('assert'),
+    tap     = require('tap'),
     carrier = require('../lib/carrier.js');
 
-var server;
-var port = 4001;
-var expected_line = "Hello World"
+tap.test("no line break", function(t) {
+  var server;
+  var port = 4001;
+  var expected_line = "Hello World";
 
-exports.run = function(next) {
+  t.plan(1);
 
   server = net.createServer(function(conn) {
     carrier.carry(conn, function(line) {
-      assert.equal(line, expected_line);
-      next();
+      t.equal(line, expected_line);
     });
   });
   server.listen(port);
@@ -20,8 +20,8 @@ exports.run = function(next) {
   client.on('connect', function() {
     client.end(expected_line);
   });
-}
 
-exports.teardown = function() {
-  server.close();
-}
+  t.on("end", function() {
+    server.close();
+  });
+});
