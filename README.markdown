@@ -31,3 +31,14 @@ Or, you can also listen to the "line" event on the returned object of carrier.ca
       });
     });
     server.listen(4001);
+
+carrier.carry accepts the following options:
+
+    carrier.carry(reader, listener, encoding, separator)
+
+* reader: the stream reader
+* listener: a "line" event listener function
+* encoding: what encoding to assume. Default: "utf8"
+* separator: what line separator to use. Default: /\r?\n/
+
+All are optional except for the first.

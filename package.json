@@ -1,6 +1,6 @@
 { "name" : "carrier"
 , "description" : "Evented stream line reader for node.js"
-, "version" : "0.1.6"
+, "version" : "0.1.7"
 , "homepage" : "http://github.com/pgte/carrier"
 , "author" :
       {
@@ -17,6 +17,10 @@
           "name": "Stéphan Kochen"
         , "email": "stephan@kochen.nl"
       }
+    , {
+          "name": "Patrick Georgi"
+        , "url": "https://github.com/pgeorgi"
+    }
   ]
 , "repository" :
   { "type" : "git"
