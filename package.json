@@ -32,7 +32,11 @@
   }
 , "directories" : { "lib" : "./lib" }
 , "engines" : { "node" : ">=0.3.0" }
-, "devDependencies": { "tap" : "0.2" }
+, "devDependencies":
+  { "tap" : "0.2"
+  , "stream-tester" : "git://github.com/dominictarr/stream-tester.git"
+  , "stream-spec" : "git://github.com/dominictarr/stream-spec.git"
+  }
 , "scripts" : { "test" : "tap test/*.js" }
 , "main": "./lib/carrier.js"
 , "licenses" :
