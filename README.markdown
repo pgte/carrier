@@ -1,3 +1,4 @@
+[![build status](https://secure.travis-ci.org/pgte/carrier.png)](http://travis-ci.org/pgte/carrier)
 Carrier helps you implement new-line terminated protocols over node.js.
 
 The client can send you chunks of lines and carrier will only notify you on each completed line.
