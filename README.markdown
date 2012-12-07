@@ -8,7 +8,7 @@ The client can send you chunks of lines and carrier will only notify you on each
     $ npm install carrier
     
 ## Usage
-
+```javascript
     var net     = require('net'),
         carrier = require('carrier');
 
@@ -18,10 +18,10 @@ The client can send you chunks of lines and carrier will only notify you on each
       });
     });
     server.listen(4001);
-
+```
   
 Or, you can also listen to the "line" event on the returned object of carrier.carry() like this:
-
+```javascript
     var net     = require('net'),
         carrier = require('carrier');
 
@@ -32,11 +32,11 @@ Or, you can also listen to the "line" event on the returned object of carrier.ca
       });
     });
     server.listen(4001);
-
+```
 carrier.carry accepts the following options:
-
+```javascript
     carrier.carry(reader, listener, encoding, separator)
-
+```
 * reader: the stream reader
 * listener: a "line" event listener function
 * encoding: what encoding to assume. Default: "utf8"
