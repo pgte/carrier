@@ -19,10 +19,15 @@ tap.test("strips CR", function(t) {
   server.listen(port);
 
   var client = net.createConnection(port);
-  client.once('connect', function() {
-    while(to_be_sents.length) client.write(to_be_sents.shift());
-    client.end();
-  });
+  var sendOne = function () {
+  	if (to_be_sents.length > 0) {
+		client.write(to_be_sents.shift());
+		setTimeout(sendOne, 100);
+	} else {
+		client.end();
+	}
+  }
+  client.once('connect', sendOne);
 
   t.once("end", function() {
     server.close();
