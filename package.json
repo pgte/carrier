@@ -1,6 +1,6 @@
 { "name" : "carrier"
 , "description" : "Evented stream line reader for node.js"
-, "version" : "0.1.14"
+, "version" : "0.2.0"
 , "homepage" : "http://github.com/pgte/carrier"
 , "author" :
       {
@@ -20,7 +20,11 @@
     , {
           "name": "Patrick Georgi"
         , "url": "https://github.com/pgeorgi"
-    }
+      }
+    , {
+          "name": "Mattijah"
+        , "url": "https://github.com/Mattijah"
+      }
   ]
 , "repository" :
   { "type" : "git"
