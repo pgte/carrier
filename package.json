@@ -1,47 +1,52 @@
-{ "name" : "carrier"
-, "description" : "Evented stream line reader for node.js"
-, "version" : "0.3.0"
-, "homepage" : "http://github.com/pgte/carrier"
-, "author" :
-      {
-          "name": "Pedro Teixeira"
-        , "email": "pedro.teixeira@gmail.com"
-      }
-, "contributors" :
-  [
-      {
-          "name": "Pedro Teixeira"
-        , "email": "pedro.teixeira@gmail.com"
-      }
-    , {
-          "name": "Stéphan Kochen"
-        , "email": "stephan@kochen.nl"
-      }
-    , {
-          "name": "Patrick Georgi"
-        , "url": "https://github.com/pgeorgi"
-      }
-    , {
-          "name": "Mattijah"
-        , "url": "https://github.com/Mattijah"
-      }
-  ]
-, "repository" :
-  { "type" : "git"
-  , "url" : "http://github.com/pgte/carrier.git"
-  }
-, "bugs" :
-  { "mail" : "pedro.teixeira@gmail.com"
-  , "url" : "http://github.com/pgte/carrier/issues"
-  }
-, "directories" : { "lib" : "./lib" }
-, "engines" : { "node" : ">=0.3.0" }
-, "devDependencies": { "tap" : "0.2" }
-, "scripts" : { "test" : "tap test/*.js" }
-, "main": "./lib/carrier.js"
-, "licenses" :
-  [ { "type" : "MIT"
-    , "url" : "http://github.com/pgte/carrier/raw/master/LICENSE"
+{
+  "name": "carrier",
+  "description": "Evented stream line reader for node.js",
+  "version": "0.4.0",
+  "homepage": "http://github.com/pgte/carrier",
+  "author": {
+    "name": "Pedro Teixeira",
+    "email": "pedro.teixeira@gmail.com"
+  },
+  "contributors": [
+    {
+      "name": "Pedro Teixeira",
+      "email": "pedro.teixeira@gmail.com"
+    },
+    {
+      "name": "Stéphan Kochen",
+      "email": "stephan@kochen.nl"
+    },
+    {
+      "name": "Patrick Georgi",
+      "url": "https://github.com/pgeorgi"
+    },
+    {
+      "name": "Mattijah",
+      "url": "https://github.com/Mattijah"
     }
-  ]
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/pgte/carrier.git"
+  },
+  "bugs": {
+    "mail": "pedro.teixeira@gmail.com",
+    "url": "http://github.com/pgte/carrier/issues"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "engines": {
+    "node": ">=0.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.3",
+    "tap": "^0.2"
+  },
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "main": "./lib/carrier.js",
+  "types": "./lib/carrier.d.ts",
+  "license": "MIT"
 }
